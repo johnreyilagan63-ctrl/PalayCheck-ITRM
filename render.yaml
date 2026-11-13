@@ -1,0 +1,48 @@
+databases:
+  - name: palaycheck-db
+    databaseName: palaycheck
+    user: palaycheck
+    plan: free
+    region: singapore
+
+services:
+  - type: web
+    name: palaycheck
+    runtime: docker
+    plan: free
+    region: singapore
+    rootDir: palaycheck/laravel
+    dockerfilePath: palaycheck/laravel/Dockerfile
+    dockerContext: palaycheck/laravel
+    healthCheckPath: /up
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        value: https://palaycheck.onrender.com
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_URL
+        fromDatabase:
+          name: palaycheck-db
+          property: connectionString
+      - key: CACHE_STORE
+        value: file
+      - key: SESSION_DRIVER
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: DETECTION_PROVIDER
+        value: roboflow
+      - key: INFERENCE_URL
+        value: ""
+      - key: INFERENCE_AUTOSTART
+        value: "false"
+      - key: ROBOFLOW_API_KEY
+        sync: false

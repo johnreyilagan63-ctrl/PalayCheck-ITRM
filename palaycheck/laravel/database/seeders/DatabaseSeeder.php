@@ -20,8 +20,9 @@ class DatabaseSeeder extends Seeder
         $data = json_decode((string) file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
 
         $adminPassword = null;
+        $generatedAdminPassword = null;
 
-        DB::transaction(function () use ($data, &$adminPassword): void {
+        DB::transaction(function () use ($data, &$adminPassword, &$generatedAdminPassword): void {
             foreach ($data['pests'] as [$name, $scientificName, $description, $symptoms, $effects]) {
                 $pest = Pest::firstOrCreate(
                     ['name' => $name],
@@ -77,7 +78,12 @@ class DatabaseSeeder extends Seeder
                 throw new RuntimeException('Cannot create the admin account: another account already uses "admin".');
             }
 
-            $adminPassword = env('ADMIN_PASSWORD') ?: bin2hex(random_bytes(12));
+            $adminPassword = env('ADMIN_PASSWORD');
+            if (! is_string($adminPassword) || $adminPassword === '') {
+                $adminPassword = bin2hex(random_bytes(12));
+                $generatedAdminPassword = $adminPassword;
+            }
+
             User::create([
                 'full_name' => 'PalayCheck Administrator',
                 'username' => 'admin',
@@ -89,9 +95,9 @@ class DatabaseSeeder extends Seeder
             ]);
         });
 
-        if ($adminPassword !== null && isset($this->command)) {
+        if ($generatedAdminPassword !== null && isset($this->command)) {
             $this->command->warn('Admin username: admin');
-            $this->command->warn('Admin password (save this now): '.$adminPassword);
+            $this->command->warn('Admin password (save this now): '.$generatedAdminPassword);
         }
     }
 }

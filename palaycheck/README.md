@@ -37,6 +37,24 @@ prints its generated password once.
 
 Open `http://127.0.0.1:8000`.
 
+## Deploy to Render
+
+The repository includes a Render Blueprint in `render.yaml`. In Render, choose
+**New > Blueprint**, connect this GitHub repository, and apply the blueprint.
+It creates a Docker-based Laravel web service and a PostgreSQL database in
+Singapore. The first boot runs migrations and the idempotent database seeder.
+
+The Blueprint generates `APP_KEY` and the initial admin password. Find
+`ADMIN_PASSWORD` in the web service's environment settings to sign in as
+`admin`. Add `ROBOFLOW_API_KEY` there to enable pest detection; the local YOLO
+service is not deployed by this Blueprint.
+
+Both services use Render's free plans. The web service has ephemeral storage,
+so uploaded scan images can be lost when it restarts or redeploys. Use an
+external object-storage provider for persistent uploads in production. Review
+Render's current free-database limits and retention before using this for
+production data.
+
 ## Tests
 
 The test suite uses in-memory SQLite and does not touch the MySQL database.
