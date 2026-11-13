@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Laravel development server",
+			"type": "shell",
+			"command": "php",
+			"args": [
+				"palaycheck\\laravel\\artisan",
+				"serve",
+				"--host=127.0.0.1",
+				"--port=8000"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

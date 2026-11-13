@@ -1,0 +1,380 @@
+{
+  "pests": [
+    [
+      "Brown Planthopper",
+      "Nilaparvata lugens",
+      "A small brown sap-sucking insect that feeds at the base of rice tillers. One of the most destructive rice pests in Asia; it also spreads grassy stunt and ragged stunt viruses.",
+      "Yellowing then browning of plants in circular patches ('hopperburn'); stunted growth; honeydew and sooty mold at the plant base; many small brown insects on lower stems.",
+      "Severe infestations dry out whole patches of the field and can cause total yield loss."
+    ],
+    [
+      "Green Leafhopper",
+      "Nephotettix virescens",
+      "A bright green leafhopper that sucks sap from rice leaves and is the main vector of rice tungro virus.",
+      "Yellow-orange leaf discoloration, stunted plants, reduced tillering; green wedge-shaped insects jump when plants are disturbed.",
+      "Direct feeding weakens plants, but tungro virus transmission causes the biggest yield losses."
+    ],
+    [
+      "Small Brown Planthopper",
+      "Laodelphax striatellus",
+      "A small brown planthopper that feeds on rice sap and transmits rice stripe virus. It is easily confused with other planthoppers.",
+      "Yellowing or silvering leaves, stunted growth, fewer tillers; small brown insects near the leaf sheaths.",
+      "Feeding weakens plants, and virus infection can cause severe yield loss."
+    ],
+    [
+      "Yellow Rice Stem Borer",
+      "Scirpophaga incertulas",
+      "A yellow moth whose larvae bore into rice stems. Causes 'deadheart' in the vegetative stage and 'whitehead' in the reproductive stage.",
+      "Dead central tiller that pulls out easily (deadheart); empty white panicles (whitehead); egg masses covered in buff hairs on leaf tips.",
+      "One of the most damaging rice pests; losses of 10-60% are possible in bad outbreaks."
+    ],
+    [
+      "Asiatic Rice Borer",
+      "Chilo suppressalis",
+      "A moth whose larvae bore into rice stems, causing deadheart and whitehead. It is one of the main stem-boring pests of rice.",
+      "Dead central tillers, empty white panicles, frass at stem openings; larvae found inside stems.",
+      "Heavy infestations reduce tiller number and grain filling, lowering yield."
+    ],
+    [
+      "Rice Leaffolder",
+      "Cnaphalocrocis medinalis",
+      "Moth larvae that fold rice leaves lengthwise and feed inside, scraping away the green tissue.",
+      "Folded leaves with white, transparent streaks; leaf tips that look scorched; green larvae inside the fold.",
+      "Reduces photosynthesis; heavy damage on the flag leaf lowers grain yield."
+    ],
+    [
+      "Rice Bug",
+      "Leptocorisa oratorius",
+      "A slender, long-legged green-brown bug with a strong odor that sucks milk from developing rice grains.",
+      "Empty or partly filled grains; discolored spots on grains; bugs on panicles at flowering and milking stage.",
+      "Poor grain quality and weight; chalky, broken grains at milling."
+    ],
+    [
+      "Rice Water Weevil",
+      "Lissorhoptrus oryzophilus",
+      "A small grey-brown weevil. Adults feed on rice leaves, while larvae live in the soil and feed on roots.",
+      "Notched or scarred leaves, reduced roots, stunted plants, and fewer tillers.",
+      "Root damage causes poor establishment and can reduce yield, especially in flooded fields."
+    ],
+    [
+      "Rice Gall Midge",
+      "Orseolia oryzae",
+      "A tiny fly whose maggots feed at the growing point and form galls, producing onion-like shoots instead of normal tillers.",
+      "Silver-white tubular galls, onion shoot symptoms, stunted plants, and missing panicles.",
+      "Infested tillers produce no grain, so heavy attacks can cause major yield loss."
+    ],
+    [
+      "Rice Whorl Maggot",
+      "Hydrellia philippina",
+      "A small fly whose maggots feed inside the leaf whorls of young rice plants.",
+      "White streaks or small holes on young leaves, distorted or damaged whorls, and stunted seedlings.",
+      "Damage slows early growth and can reduce tillering in severe cases."
+    ],
+    [
+      "Paddy Stem Maggot",
+      "Chlorops oryzae",
+      "A small fly whose maggots bore into rice stems and feed inside the growing plant.",
+      "Deadheart, stunted tillers, hollow stems, and maggots found inside affected stems.",
+      "Infested tillers die or produce no panicles, reducing plant stand and yield."
+    ],
+    [
+      "Rice Armyworm",
+      "Mythimna separata",
+      "A moth whose caterpillars feed on rice leaves and can also cut young panicles.",
+      "Ragged leaves, cut panicles, caterpillar droppings, and caterpillars feeding at night.",
+      "Severe outbreaks can defoliate plants and reduce grain yield."
+    ],
+    [
+      "Cutworm",
+      "Spodoptera litura",
+      "A soil-surface caterpillar that cuts young rice seedlings near the base, especially at night.",
+      "Cut seedlings, missing plants, and caterpillars hiding near the soil surface during the day.",
+      "Heavy attacks create bare patches and reduce plant stand."
+    ],
+    [
+      "Rice Leaf Caterpillar",
+      "Spodoptera mauritia",
+      "A caterpillar that feeds on rice leaves, chewing large irregular holes and sometimes eating whole leaves.",
+      "Chewed leaves, missing leaf tissue, and caterpillars resting on leaves or near the plant base.",
+      "Defoliation reduces photosynthesis and can lower yield when outbreaks are severe."
+    ]
+  ],
+  "advice": {
+    "Brown Planthopper": [
+      [
+        "prevention",
+        "Plant resistant varieties",
+        "Choose BPH-resistant varieties and avoid planting the same variety continuously across seasons."
+      ],
+      [
+        "cultural",
+        "Avoid excess nitrogen",
+        "Over-fertilizing with nitrogen makes plants lush and attractive to planthoppers. Follow soil-test-based fertilizer rates."
+      ],
+      [
+        "cultural",
+        "Drain and dry the field",
+        "Briefly draining the field and widening row spacing lowers humidity at the base where the insects live."
+      ]
+    ],
+    "Green Leafhopper": [
+      [
+        "prevention",
+        "Synchronize planting",
+        "Plant at the same time as neighbouring farms to break the pest and tungro virus cycle."
+      ],
+      [
+        "cultural",
+        "Remove infected plants",
+        "Pull and bury plants showing tungro symptoms early, and clear weeds and ratoons that host the virus."
+      ],
+      [
+        "biological",
+        "Protect natural enemies",
+        "Spiders, mirid bugs and egg parasitoids control leafhoppers; avoid early-season insecticide sprays."
+      ]
+    ],
+    "Small Brown Planthopper": [
+      [
+        "prevention",
+        "Plant resistant varieties",
+        "Use varieties resistant to planthoppers and rice stripe virus where available."
+      ],
+      [
+        "cultural",
+        "Scout the plant base",
+        "Check the lower stems of 10 hills in several spots each week."
+      ],
+      [
+        "biological",
+        "Protect natural enemies",
+        "Avoid early-season sprays and conserve spiders, mirid bugs and egg parasitoids."
+      ]
+    ],
+    "Yellow Rice Stem Borer": [
+      [
+        "prevention",
+        "Cut stubble low",
+        "Harvest close to the ground and plow stubble under to destroy larvae that overwinter."
+      ],
+      [
+        "cultural",
+        "Collect egg masses",
+        "Hand-pick egg masses from seedbeds and leaf tips, and use light traps to monitor moths."
+      ],
+      [
+        "biological",
+        "Release Trichogramma",
+        "Egg parasitoids such as Trichogramma wasps can reduce stem borer eggs in the field."
+      ]
+    ],
+    "Asiatic Rice Borer": [
+      [
+        "prevention",
+        "Cut stubble low",
+        "Harvest close to the ground and plow stubble to destroy overwintering larvae."
+      ],
+      [
+        "cultural",
+        "Use light traps",
+        "Monitor adult moths and remove egg masses from seedbeds and leaf tips."
+      ],
+      [
+        "biological",
+        "Release Trichogramma",
+        "Egg parasitoids can reduce borer eggs; avoid broad-spectrum sprays that kill them."
+      ]
+    ],
+    "Rice Leaffolder": [
+      [
+        "prevention",
+        "Keep bunds weed-free",
+        "Weedy bunds shelter moths. Keep borders clean."
+      ],
+      [
+        "cultural",
+        "Avoid excess nitrogen",
+        "High nitrogen increases leaffolder egg laying and damage."
+      ],
+      [
+        "biological",
+        "Do not spray early",
+        "Early-season sprays kill parasitoids that normally keep leaffolders in check."
+      ]
+    ],
+    "Rice Bug": [
+      [
+        "prevention",
+        "Clear weeds at flowering",
+        "Rice bugs breed on grassy weeds. Remove weeds around the field before heading."
+      ],
+      [
+        "cultural",
+        "Synchronize heading",
+        "Uniform planting dates shorten the time panicles are exposed to bugs."
+      ],
+      [
+        "cultural",
+        "Use bait traps",
+        "Rotten fish or meat in a trap lures bugs away from the panicles."
+      ]
+    ],
+    "Rice Water Weevil": [
+      [
+        "cultural",
+        "Drain early fields",
+        "Short drainage during early establishment reduces larval survival where practical."
+      ],
+      [
+        "cultural",
+        "Rotate crops",
+        "Rotate rice with a non-host crop and keep irrigation water clean."
+      ],
+      [
+        "prevention",
+        "Scout leaves and roots",
+        "Check for notched leaves and root damage; treat only when the infestation passes the threshold."
+      ]
+    ],
+    "Rice Gall Midge": [
+      [
+        "prevention",
+        "Plant resistant varieties",
+        "Use gall midge-resistant varieties and plant early and uniformly."
+      ],
+      [
+        "cultural",
+        "Destroy galls",
+        "Remove and destroy gall-bearing shoots and clear alternate hosts around the field."
+      ],
+      [
+        "biological",
+        "Conserve parasitoids",
+        "Avoid unnecessary sprays that kill the natural enemies of gall midge."
+      ]
+    ],
+    "Rice Whorl Maggot": [
+      [
+        "cultural",
+        "Drain the field briefly",
+        "Short drainage at early tillering reduces maggot damage where water control is possible."
+      ],
+      [
+        "cultural",
+        "Avoid dense planting",
+        "Wider spacing and balanced nitrogen reduce the humid whorls that maggots prefer."
+      ],
+      [
+        "prevention",
+        "Scout young leaves",
+        "Check leaf whorls for white streaks and small maggots."
+      ]
+    ],
+    "Paddy Stem Maggot": [
+      [
+        "cultural",
+        "Clean stubble",
+        "Cut and destroy infested stems after harvest to reduce carry-over."
+      ],
+      [
+        "prevention",
+        "Use light traps",
+        "Monitor adult flies and remove egg masses from seedbeds."
+      ],
+      [
+        "cultural",
+        "Avoid late planting",
+        "Uniform early planting reduces the period when young plants are exposed."
+      ]
+    ],
+    "Rice Armyworm": [
+      [
+        "prevention",
+        "Scout field edges",
+        "Check young plants and field edges for caterpillars and droppings."
+      ],
+      [
+        "biological",
+        "Conserve natural enemies",
+        "Avoid early sprays and encourage parasitoids and predatory insects."
+      ],
+      [
+        "chemical",
+        "Treat above threshold",
+        "Use targeted control only when damage is severe and pest numbers pass the threshold."
+      ]
+    ],
+    "Cutworm": [
+      [
+        "cultural",
+        "Clean bunds and residues",
+        "Remove weeds and crop residue where cutworms shelter during the day."
+      ],
+      [
+        "prevention",
+        "Scout at dusk",
+        "Look for cut seedlings and caterpillars near the soil surface."
+      ],
+      [
+        "cultural",
+        "Use bait or light traps",
+        "Traps reduce adults; handpick caterpillars in small fields."
+      ]
+    ],
+    "Rice Leaf Caterpillar": [
+      [
+        "cultural",
+        "Remove egg masses",
+        "Check leaves and remove egg masses before caterpillars spread."
+      ],
+      [
+        "biological",
+        "Protect natural enemies",
+        "Conserve parasitoids and predatory bugs that attack caterpillars."
+      ],
+      [
+        "chemical",
+        "Spot-treat outbreaks",
+        "Treat only affected patches when damage passes the economic threshold."
+      ]
+    ]
+  },
+  "learning": [
+    [
+      "Integrated Pest Management (IPM) Basics",
+      "IPM",
+      "Combine prevention, monitoring and the least harmful control to protect your crop.",
+      "IPM means using several tactics together: resistant varieties, good field sanitation, balanced fertilizer, protecting natural enemies, and spraying only when pest numbers pass the economic threshold. This saves money, keeps beneficial insects alive and slows pesticide resistance."
+    ],
+    [
+      "How to Scout Your Rice Field",
+      "Monitoring",
+      "A simple weekly routine for catching pests early.",
+      "Walk the field in a W or zig-zag pattern. Check at least 10 hills in several spots. Look at the base of the plant, the leaf undersides and the panicles. Take clear photos of anything unusual and scan them with PalayCheck's camera."
+    ],
+    [
+      "Water Management and Pests",
+      "Cultural Control",
+      "How water levels help or hurt pest control.",
+      "Continuous flooding can favour some pests, while alternate wetting and drying lowers humidity at the plant base. Short drainage can also help against water weevils and whorl maggots. Always match water management to the crop stage."
+    ],
+    [
+      "Safe and Responsible Pesticide Use",
+      "Safety",
+      "If you must spray, do it right.",
+      "Spray only when pest numbers pass the economic threshold. Read the label, wear protective equipment, never spray near water sources, and rotate active ingredients. Avoid spraying in the first 30-40 days after transplanting to protect natural enemies."
+    ],
+    [
+      "Natural Enemies in Your Rice Field",
+      "Biological Control",
+      "Spiders, wasps and beetles work for free.",
+      "Wolf spiders, mirid bugs, dragonflies, damselflies and parasitic wasps eat or infect many rice pests. Keep bunds flowering and avoid unnecessary insecticides to keep them around."
+    ],
+    [
+      "Using the PalayCheck Camera Scanner",
+      "Using PalayCheck",
+      "Get the best results from a camera scan.",
+      "Hold the camera 15-30 cm from the affected plant in good daylight. Keep the pest or damage in the centre and avoid blurry shots. Use live scan to move around the plant, then press Scan & Save to keep the result in your history. Always confirm with a local agriculturist before major treatment decisions."
+    ]
+  ]
+}

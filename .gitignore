@@ -1,0 +1,3 @@
+palaycheck/venv/
+palaycheck/laravel/public/static/uploads/*
+!palaycheck/laravel/public/static/uploads/.gitkeep
