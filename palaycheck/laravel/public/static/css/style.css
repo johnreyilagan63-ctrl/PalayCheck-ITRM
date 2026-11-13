@@ -1,5 +1,7 @@
 :root{--pc:#1a3d2b;--pc2:#245c3e;--gold:#d4a73a;--bg:#f6f6f1}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:#1c1f1d}
+body.site-shell{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body.site-shell>main{flex:1 0 auto;min-height:0}
 .pc-nav{background:var(--pc);padding:.9rem 0}.pc-nav .nav-link{color:#fff;font-weight:500}.pc-nav .nav-link:hover{color:var(--gold)}
 .navbar-brand,.brand{color:#fff!important;font-weight:700;font-size:1.4rem}.navbar-brand span,.brand span,.brand-dark span{color:var(--gold)}
 .brand-dark{font-weight:700;font-size:1.6rem;color:var(--pc)}
@@ -21,7 +23,7 @@ main{min-height:62vh}.text-pc{color:var(--pc2)}.bg-pc{background:var(--pc2)!impo
 .empty{text-align:center;padding:3rem;color:#666}.empty i{font-size:3rem;color:var(--pc2)}
 .thumb{width:56px;height:56px;object-fit:cover;border-radius:8px}
 .badge.sev-low{background:#2e8b57}.badge.sev-medium{background:#e0a000}.badge.sev-high{background:#c0392b}
-.pc-footer{background:var(--pc);color:#dbe5de;padding:2.5rem 0 1rem;margin-top:3rem}.pc-footer a{display:block;color:var(--gold);text-decoration:none;margin:.2rem 0}.pc-footer h6{color:#fff}
+.pc-footer{background:var(--pc);color:#dbe5de;padding:2.5rem 0 calc(1rem + env(safe-area-inset-bottom));margin-top:3rem}.pc-footer a{display:block;color:var(--gold);text-decoration:none;padding:.25rem 0}.pc-footer h6{color:#fff}
 .cam-wrap{position:relative;background:#111;border-radius:14px;overflow:hidden;min-height:240px}
 .cam-wrap video{width:100%;height:auto;display:block}.cam-wrap canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 .cam-off{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:2.5rem}.cam-off p{font-size:1rem}
@@ -46,6 +48,8 @@ body.admin{display:flex;min-height:100vh;background:#eef0ea}
 
 @media(max-width:767.98px){
   .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+  .pc-footer{margin-top:2rem;padding-top:2rem}
+  .pc-footer a{min-height:2.5rem;display:flex;align-items:center}
   .hero-actions .btn{margin:0}
   .sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.25rem}
   .sb-brand,.sb-bottom{grid-column:1/-1}

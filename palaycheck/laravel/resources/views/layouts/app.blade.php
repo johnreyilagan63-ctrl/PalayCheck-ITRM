@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="{{ asset('static/css/style.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="site-shell">
 <nav class="navbar navbar-expand-lg pc-nav"><div class="container">
   <a class="navbar-brand" href="{{ route('home') }}">🌾 Palay<span>Check</span></a>
   <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nv"><i class="bi bi-list text-white fs-2"></i></button>
