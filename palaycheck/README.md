@@ -46,14 +46,18 @@ Singapore. The first boot runs migrations and the idempotent database seeder.
 
 The Blueprint generates `APP_KEY` and the initial admin password. Find
 `ADMIN_PASSWORD` in the web service's environment settings to sign in as
-`admin`. Add `ROBOFLOW_API_KEY` there to enable pest detection; the local YOLO
-service is not deployed by this Blueprint.
+`admin`. The web image exports the bundled YOLOv8m model to ONNX during its
+build and runs it with the CPU-only ONNX Runtime, so pest scans do not require
+Roboflow inference credits. `ROBOFLOW_API_KEY` remains an optional fallback if
+the local model service is unavailable.
 
 Both services use Render's free plans. The web service has ephemeral storage,
 so uploaded scan images can be lost when it restarts or redeploys. Use an
 external object-storage provider for persistent uploads in production. Review
 Render's current free-database limits and retention before using this for
-production data.
+production data. The free web instance has limited CPU and memory, so local
+model scans may be slow; a larger compute plan may be needed if the service
+reaches its resource limits.
 
 ## Tests
 
@@ -62,6 +66,12 @@ The test suite uses in-memory SQLite and does not touch the MySQL database.
 ```powershell
 cd laravel
 php artisan test
+```
+
+The local ONNX post-processing tests run from the project root:
+
+```powershell
+python -m unittest discover -s tests -t .
 ```
 
 ## Local detection service

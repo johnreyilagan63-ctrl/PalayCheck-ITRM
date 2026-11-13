@@ -70,6 +70,12 @@ class DetectionAnalysisTest extends TestCase
 
     public function test_uploaded_image_is_analyzed_matched_and_saved(): void
     {
+        config([
+            'palaycheck.inference.url' => 'http://127.0.0.1:5001',
+            'palaycheck.roboflow.api_key' => 'demo-key',
+            'palaycheck.roboflow.workflows' => ['https://example.com/workflow'],
+        ]);
+
         Http::fake([
             '*/detect' => Http::response([
                 'detections' => [
@@ -99,6 +105,8 @@ class DetectionAnalysisTest extends TestCase
         ]);
 
         $this->assertNotEmpty(glob($this->uploadDir.DIRECTORY_SEPARATOR.'*'));
+        Http::assertSent(static fn ($request): bool => $request->url() === 'http://127.0.0.1:5001/detect');
+        Http::assertNotSent(static fn ($request): bool => str_contains($request->url(), 'example.com/workflow'));
     }
 
     public function test_matched_pest_is_preferred_over_an_unknown_label(): void

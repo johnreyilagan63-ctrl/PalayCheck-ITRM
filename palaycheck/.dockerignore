@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+laravel/.dockerignore
+laravel/.env
+laravel/.env.*
+!laravel/.env.example
+laravel/.phpunit.cache
+laravel/.phpunit.result.cache
+laravel/node_modules
+laravel/vendor
+laravel/storage/logs/*.log
+**/__pycache__
+**/*.py[cod]

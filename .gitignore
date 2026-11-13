@@ -1,3 +1,5 @@
 palaycheck/venv/
+__pycache__/
+*.py[cod]
 palaycheck/laravel/public/static/uploads/*
 !palaycheck/laravel/public/static/uploads/.gitkeep
