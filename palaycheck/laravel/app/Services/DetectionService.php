@@ -11,14 +11,14 @@ use Throwable;
 
 class DetectionService
 {
-    public function detect(string $filePath, string $mime, float $threshold, bool $allWorkflows = false): array
+    public function detect(string $filePath, string $mime, float $threshold): array
     {
         if (detection_provider() === 'roboflow' && roboflow_configured()) {
-            return $this->roboflowDetect($filePath, $threshold, $allWorkflows);
+            return $this->roboflowDetect($filePath, $threshold);
         }
 
         if (! local_inference_configured()) {
-            return $this->roboflowDetect($filePath, $threshold, $allWorkflows);
+            return $this->roboflowDetect($filePath, $threshold);
         }
 
         try {
@@ -29,7 +29,7 @@ class DetectionService
             }
 
             try {
-                return $this->roboflowDetect($filePath, $threshold, $allWorkflows);
+                return $this->roboflowDetect($filePath, $threshold);
             } catch (RuntimeException $remoteError) {
                 throw new RuntimeException($this->combineDetectionErrors($localError, $remoteError));
             }
@@ -170,7 +170,7 @@ class DetectionService
         return $this->dedupe($detections);
     }
 
-    private function roboflowDetect(string $filePath, float $threshold, bool $allWorkflows): array
+    private function roboflowDetect(string $filePath, float $threshold): array
     {
         $apiKey = trim((string) config('palaycheck.roboflow.api_key'));
         $workflows = array_values(array_filter((array) config('palaycheck.roboflow.workflows'), 'is_string'));
@@ -187,7 +187,7 @@ class DetectionService
         $payload = [
             'inputs' => ['image' => ['type' => 'base64', 'value' => base64_encode($image)]],
         ];
-        $urls = $allWorkflows ? $workflows : [$workflows[0]];
+        $urls = [$workflows[0]];
         $caBundle = (string) config('palaycheck.roboflow.ca_bundle');
 
         try {

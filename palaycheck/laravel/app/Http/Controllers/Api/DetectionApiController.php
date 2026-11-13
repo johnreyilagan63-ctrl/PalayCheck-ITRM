@@ -46,8 +46,7 @@ class DetectionApiController extends Controller
             $detections = $service->detect(
                 $file->getRealPath(),
                 (string) $file->getMimeType(),
-                $threshold,
-                $save
+                $threshold
             );
 
             foreach ($detections as &$detection) {

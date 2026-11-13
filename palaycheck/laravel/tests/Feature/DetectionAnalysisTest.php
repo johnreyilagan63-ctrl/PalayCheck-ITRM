@@ -230,16 +230,18 @@ class DetectionAnalysisTest extends TestCase
             ]);
     }
 
-    public function test_roboflow_is_scanned_first_when_it_is_the_primary_provider(): void
+    public function test_saved_roboflow_scan_uses_one_workflow_and_can_be_viewed(): void
     {
+        $primaryWorkflow = 'https://example.com/primary';
+        $secondaryWorkflow = 'https://example.com/secondary';
         config([
             'palaycheck.provider' => 'roboflow',
             'palaycheck.roboflow.api_key' => 'demo-key',
-            'palaycheck.roboflow.workflows' => ['https://example.com/workflow'],
+            'palaycheck.roboflow.workflows' => [$primaryWorkflow, $secondaryWorkflow],
         ]);
 
         Http::fake([
-            'https://example.com/workflow' => Http::response([
+            'https://example.com/*' => Http::response([
                 'outputs' => [[
                     'predictions' => [
                         'image' => ['width' => 640, 'height' => 480],
@@ -256,15 +258,26 @@ class DetectionAnalysisTest extends TestCase
             ], 200),
         ]);
 
-        $response = $this->actingAs($this->user())->post('/api/detect', [
+        $user = $this->user();
+        $response = $this->actingAs($user)->post('/api/detect', [
             'image' => $this->image(),
-            'save' => '0',
-            'source' => 'camera',
+            'save' => '1',
+            'source' => 'upload',
         ]);
 
         $response->assertOk()
             ->assertJsonPath('ok', true)
+            ->assertJsonPath('saved', true)
             ->assertJsonPath('detections.0.pest_name', 'Yellow Rice Stem Borer');
+
+        Http::assertSentCount(1);
+        Http::assertSent(static fn ($request): bool => $request->url() === $primaryWorkflow);
+        Http::assertNotSent(static fn ($request): bool => $request->url() === $secondaryWorkflow);
+
+        $this->actingAs($user)
+            ->get(route('history.show', $response->json('id')))
+            ->assertOk()
+            ->assertSee('Yellow Rice Stem Borer');
 
         Http::assertNotSent(static fn ($request): bool => str_contains($request->url(), '127.0.0.1:5001'));
     }
