@@ -18,6 +18,6 @@
 <div class="row g-3"><div class="col-lg-6"><div class="d-flex justify-content-between"><h5>Recent Detections</h5><a class="btn btn-sm btn-outline-pc" href="{{ route('admin.detections.index') }}">View all</a></div>
 <div class="card p-3">@forelse ($recent as $detection)<div class="small mb-1"><b>{{ $detection->label }}</b> · {{ $detection->user?->username }} · {{ number_format((float) $detection->confidence * 100, 0) }}%</div>@empty<div class="text-center text-muted">No data available yet.</div>@endforelse</div></div>
 <div class="col-lg-6"><div class="d-flex justify-content-between"><h5>Recent Users</h5><a class="btn btn-sm btn-outline-pc" href="{{ route('admin.resources.index', 'users') }}">View All Users</a></div>
-<div class="card"><table class="table mb-0 small"><thead class="table-pc"><tr><th>Name</th><th>Role</th><th>Status</th><th>Joined</th></tr></thead>
-@foreach ($recentUsers as $recentUser)<tr><td>{{ $recentUser->full_name }}<br><small class="text-muted">{{ $recentUser->email }}</small></td><td>{{ strtoupper((string) $recentUser->role) }}</td><td>{{ $recentUser->status }}</td><td>{{ format_datetime($recentUser->created_at, 'M d, Y') }}</td></tr>@endforeach</table></div></div></div>
+<div class="card"><div class="table-responsive"><table class="table mb-0 small"><thead class="table-pc"><tr><th>Name</th><th>Role</th><th>Status</th><th>Joined</th></tr></thead>
+@foreach ($recentUsers as $recentUser)<tr><td>{{ $recentUser->full_name }}<br><small class="text-muted">{{ $recentUser->email }}</small></td><td>{{ strtoupper((string) $recentUser->role) }}</td><td>{{ $recentUser->status }}</td><td>{{ format_datetime($recentUser->created_at, 'M d, Y') }}</td></tr>@endforeach</table></div></div></div></div>
 @endsection

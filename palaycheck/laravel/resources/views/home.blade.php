@@ -6,8 +6,10 @@
 <section class="hero"><div class="row align-items-center"><div class="col-lg-7">
   <h1>Smarter Rice Farming Starts with Early Pest Detection</h1>
   <p>PalayCheck uses machine learning to help farmers identify rice pests, understand their effects, and receive practical farming recommendations.</p>
-  <a class="btn btn-gold btn-lg me-2" href="{{ auth()->check() ? route('detection.index') : route('login') }}"><i class="bi bi-camera"></i> Detect a Pest</a>
-  <a class="btn btn-outline-light btn-lg" href="{{ route('pests.index') }}"><i class="bi bi-bug"></i> Explore Pest Information</a></div>
+  <div class="hero-actions">
+    <a class="btn btn-gold btn-lg" href="{{ auth()->check() ? route('detection.index') : route('login') }}"><i class="bi bi-camera"></i> Detect a Pest</a>
+    <a class="btn btn-outline-light btn-lg" href="{{ route('pests.index') }}"><i class="bi bi-bug"></i> Explore Pest Information</a>
+  </div></div>
   <div class="col-lg-5 d-none d-lg-block"><div class="hero-art"><img src="{{ asset('static/img/hero-pests.jpg') }}" alt="Common rice pests in the field"></div></div></div></section>
 <h2 class="text-center mt-5 fw-bold">Everything You Need for Smarter Rice Pest Management</h2>
 <p class="text-center text-muted">One workflow from field image to confident action.</p>
