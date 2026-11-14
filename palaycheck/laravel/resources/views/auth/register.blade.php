@@ -9,7 +9,7 @@
     <label class="form-label fw-semibold">Full name</label><input class="form-control mb-3" type="text" name="full_name" autocomplete="name" value="{{ old('full_name') }}" required>
     <label class="form-label fw-semibold">Username</label><input class="form-control mb-3" type="text" name="username" autocomplete="username" value="{{ old('username') }}" required>
     <label class="form-label fw-semibold">Email</label><input class="form-control mb-3" type="email" name="email" autocomplete="email" value="{{ old('email') }}" required>
-    <label class="form-label fw-semibold">Password (min 6)</label>
+    <label class="form-label fw-semibold">Password</label>
     <div class="input-group mb-3"><input class="form-control" type="password" name="password" id="registerPassword" autocomplete="new-password" required><button class="btn btn-outline-secondary" type="button" data-toggle-password="#registerPassword" aria-label="Show password"><i class="bi bi-eye"></i></button></div>
     <label class="form-label fw-semibold">Confirm password</label>
     <div class="input-group mb-3"><input class="form-control" type="password" name="confirm" id="registerConfirm" autocomplete="new-password" required><button class="btn btn-outline-secondary" type="button" data-toggle-password="#registerConfirm" aria-label="Show password"><i class="bi bi-eye"></i></button></div>

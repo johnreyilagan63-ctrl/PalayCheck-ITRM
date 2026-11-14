@@ -80,7 +80,7 @@ class AuthController extends Controller
             'full_name' => ['required', 'string', 'max:120'],
             'username' => ['required', 'string', 'max:60', 'unique:users,username'],
             'email' => ['required', 'email', 'max:120', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:6', 'same:confirm'],
+            'password' => ['required', 'string', 'same:confirm'],
         ], [
             'full_name.required' => 'Fill in all fields.',
             'username.required' => 'Fill in all fields.',
@@ -89,7 +89,6 @@ class AuthController extends Controller
             'email.unique' => 'Email or username already exists.',
             'username.unique' => 'Email or username already exists.',
             'password.required' => 'Fill in all fields.',
-            'password.min' => 'Password must be at least 6 characters.',
             'password.same' => 'Passwords do not match.',
         ]);
 

@@ -43,6 +43,20 @@ class AuthTest extends TestCase
         $this->assertTrue(Hash::check('secret1', $user->password_hash));
     }
 
+    public function test_registration_accepts_passwords_shorter_than_six_characters(): void
+    {
+        $this->post('/register', [
+            'full_name' => 'New Farmer',
+            'username' => 'shortpass',
+            'email' => 'shortpass@example.test',
+            'password' => 'a',
+            'confirm' => 'a',
+        ])->assertRedirect('/login');
+
+        $user = User::where('username', 'shortpass')->firstOrFail();
+        $this->assertTrue(Hash::check('a', $user->password_hash));
+    }
+
     public function test_registration_rejects_duplicate_username_or_email(): void
     {
         $this->createUser('farmer');
